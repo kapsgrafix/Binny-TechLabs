@@ -76,20 +76,10 @@
     justify-content:space-between;
     gap: 16px;
   }
-  .wordmark{
-    font-family: var(--mono);
-    font-size: 13px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    display:flex;
-    align-items:center;
-    gap:9px;
-    white-space:nowrap;
-  }
-  .wordmark .dot{
-    width:7px; height:7px; border-radius:2px;
-    background: var(--accent);
-    flex: none;
+  .logo{
+    height: 28px;
+    width: auto;
+    display: block;
   }
   .btn-outline{
     border: 1px solid var(--accent-deep);
@@ -207,6 +197,7 @@
     padding-block: 22px;
     font-family: var(--mono);
     font-size: 11.5px;
+    line-height: 1.6;
     color: var(--ink-faint);
     letter-spacing: 0.03em;
   }
@@ -216,7 +207,7 @@
 
 <header class="nav">
   <div class="nav-inner">
-    <div class="wordmark"><span class="dot"></span> BINNY TECHLABS</div>
+    <img src="logo.png" alt="Binny TechLabs" class="logo">
     <a class="btn-outline" href="#contact">Get in touch</a>
   </div>
 </header>
@@ -246,7 +237,7 @@
   </section>
 
   <footer>
-    <span>&copy; 2026 Binny TechLabs</span>
+    <span>&copy; 2026 Binny TechLabs LLP. Incorporated under Section 12(1) of the Limited Liability Partnership Act, 2008.</span>
   </footer>
 
 </div>
