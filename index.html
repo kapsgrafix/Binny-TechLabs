@@ -77,10 +77,15 @@
     gap: 16px;
   }
   .logo{
-    height: 28px;
-    width: auto;
-    display: block;
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 19px;
+    letter-spacing: -0.01em;
+    display: flex;
+    white-space: nowrap;
   }
+  .logo-binny{ color: var(--ink); }
+  .logo-tech{ color: var(--accent); }
   .btn-outline{
     border: 1px solid var(--accent-deep);
     color: var(--accent-soft);
@@ -207,7 +212,7 @@
 
 <header class="nav">
   <div class="nav-inner">
-    <img src="logo.png" alt="Binny TechLabs" class="logo">
+    <div class="logo"><span class="logo-binny">Binny</span><span class="logo-tech">TechLabs</span></div>
     <a class="btn-outline" href="#contact">Get in touch</a>
   </div>
 </header>
