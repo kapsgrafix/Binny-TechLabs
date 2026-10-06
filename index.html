@@ -3,29 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Binny TechLabs</title>
-<meta name="description" content="Binny TechLabs is a product company designing and building its own mobile apps in games, learning, and self-improvement.">
-<meta name="theme-color" content="#0E1110">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,400..600&family=DM+Sans:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<title>BinnyTechLabs</title>
+<meta name="description" content="BinnyTechLabs is a product company designing and building its own mobile apps in games, learning, and self-improvement.">
+<meta name="theme-color" content="#000000">
 <style>
   :root{
-    --bg: #0E1110;
-    --bg-raised: #171B19;
-    --bg-raised-2: #1D2220;
-    --line: #2B302D;
-    --line-soft: #21251F;
-    --ink: #EFE9DD;
-    --ink-dim: #9CA39B;
-    --ink-faint: #6B716A;
+    --bg: #000000;
+    --bg-raised: #1D1D1F;
+    --line: rgba(255,255,255,0.14);
+    --line-soft: rgba(255,255,255,0.08);
+    --text: #F5F5F7;
+    --text-secondary: #86868B;
     --accent: #FF6A2C;
-    --accent-soft: #FFB088;
-    --accent-deep: #C9481D;
-    --accent-wash: rgba(255,106,44,0.12);
-    --serif: "Fraunces", "Iowan Old Style", "Palatino Linotype", serif;
-    --sans: "DM Sans", -apple-system, "Segoe UI", sans-serif;
-    --mono: "IBM Plex Mono", "SF Mono", Consolas, monospace;
+    --accent-press: #E35A1E;
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
 
   *{ box-sizing: border-box; }
@@ -33,178 +24,191 @@
   body{
     margin: 0;
     background: var(--bg);
-    color: var(--ink);
-    font-family: var(--sans);
+    color: var(--text);
+    font-family: var(--font);
     -webkit-font-smoothing: antialiased;
     min-height: 100%;
     display: flex;
     flex-direction: column;
-    background-image:
-      radial-gradient(ellipse 900px 600px at 85% -5%, rgba(255,106,44,0.10), transparent 60%),
-      radial-gradient(ellipse 700px 500px at 0% 10%, rgba(255,255,255,0.03), transparent 60%);
-    background-repeat: no-repeat;
   }
   img{ max-width:100%; }
   a{ color: inherit; text-decoration:none; }
-  ::selection{ background: var(--accent); color:#0E1110; }
-
-  .page{
-    max-width: 1120px;
-    margin: 0 auto;
-    padding-inline: clamp(20px, 5vw, 64px);
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
+  ::selection{ background: var(--accent); color:#000; }
 
   /* ---------- Nav ---------- */
   header.nav{
     position: sticky;
     top: 0;
     z-index: 20;
-    background: rgba(14,17,16,0.82);
-    backdrop-filter: blur(10px);
+    height: 48px;
+    display:flex;
+    align-items:center;
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: saturate(180%) blur(20px);
     border-bottom: 1px solid var(--line-soft);
   }
   .nav-inner{
-    max-width: 1120px;
+    width: 100%;
+    max-width: 1024px;
     margin: 0 auto;
-    padding: 16px clamp(20px, 5vw, 64px);
+    padding-inline: clamp(16px, 4vw, 22px);
     display:flex;
     align-items:center;
     justify-content:space-between;
-    gap: 16px;
   }
   .logo{
-    font-family: var(--serif);
+    font-size: 15px;
     font-weight: 600;
-    font-size: 19px;
     letter-spacing: -0.01em;
     display: flex;
     white-space: nowrap;
   }
-  .logo-binny{ color: var(--ink); }
+  .logo-binny{ color: var(--text); }
   .logo-tech{ color: var(--accent); }
-  .btn-outline{
-    border: 1px solid var(--accent-deep);
-    color: var(--accent-soft);
-    padding: 8px 16px;
-    border-radius: 3px;
-    font-size: 13px;
-    font-weight: 500;
-    white-space: nowrap;
-    transition: background .15s ease, color .15s ease;
+  .nav-cta{
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--text);
+    opacity: 0.88;
+    transition: opacity .2s ease;
   }
-  .btn-outline:hover{ background: var(--accent-wash); color: var(--accent-soft); }
+  .nav-cta:hover{ opacity: 1; }
 
   /* ---------- Hero ---------- */
   section.hero{
     flex: 1;
-    padding-block: clamp(56px, 10vw, 108px) clamp(48px, 8vw, 88px);
     display:flex;
     align-items:center;
+  }
+  .hero-inner{
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: clamp(96px, 16vw, 180px) clamp(20px, 5vw, 40px) clamp(64px, 10vw, 120px);
+    text-align: center;
   }
   .eyebrow{
-    font-family: var(--mono);
-    font-size: 12px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--accent-soft);
-    display:flex;
-    align-items:center;
-    gap:10px;
-    margin-bottom: 22px;
-  }
-  .eyebrow::before{
-    content:"";
-    width: 22px; height: 1px;
-    background: var(--accent-deep);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: -0.01em;
+    margin-bottom: 14px;
   }
   h1{
-    font-family: var(--serif);
-    font-weight: 500;
-    font-size: clamp(38px, 5.6vw, 66px);
-    line-height: 1.04;
-    letter-spacing: -0.01em;
+    font-size: clamp(40px, 6.4vw, 80px);
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    line-height: 1.05;
+    margin: 0 0 24px;
     text-wrap: balance;
-    margin: 0 0 22px;
   }
-  h1 em{
-    font-style: italic;
-    color: var(--accent);
-  }
+  h1 span.accent{ color: var(--accent); }
   .hero p.lede{
-    font-size: 17px;
-    line-height: 1.65;
-    color: var(--ink-dim);
-    max-width: 52ch;
-    margin: 0;
+    font-size: clamp(19px, 2.1vw, 24px);
+    line-height: 1.5;
+    font-weight: 400;
+    color: var(--text-secondary);
+    max-width: 640px;
+    margin: 0 auto 36px;
   }
+  .btn-row{
+    display:flex;
+    justify-content:center;
+    gap: 28px;
+    flex-wrap: wrap;
+    align-items:center;
+  }
+  .btn-pill{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    background: var(--accent);
+    color: #fff;
+    font-size: 17px;
+    font-weight: 400;
+    padding: 11px 23px;
+    border-radius: 980px;
+    transition: background .2s ease;
+  }
+  .btn-pill:hover{ background: var(--accent-press); }
+  .btn-text{
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--accent);
+    display:inline-flex;
+    align-items:center;
+    gap: 4px;
+  }
+  .btn-text .chev{ transition: transform .2s ease; }
+  .btn-text:hover .chev{ transform: translateX(2px); }
 
   /* ---------- Contact ---------- */
-  section.contact{ padding-block: clamp(40px, 7vw, 72px); }
-  .contact-box{
-    border: 1px solid var(--line);
-    border-radius: 4px;
-    padding: clamp(32px, 6vw, 56px);
-    display:grid;
-    grid-template-columns: 1.3fr 1fr;
-    gap: 32px;
-    align-items:center;
-    background: linear-gradient(150deg, var(--bg-raised) 0%, var(--bg) 70%);
+  section.contact{
+    background: var(--bg-raised);
+    border-top: 1px solid var(--line-soft);
   }
-  @media (max-width: 700px){ .contact-box{ grid-template-columns:1fr; } }
-  .contact-box h2{
-    font-family: var(--serif);
-    font-weight: 500;
-    font-size: clamp(26px, 3.6vw, 38px);
+  .contact-inner{
+    max-width: 700px;
+    margin: 0 auto;
+    padding: clamp(72px, 11vw, 120px) clamp(20px, 5vw, 40px);
+    text-align: center;
+  }
+  .contact-eyebrow{
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+  }
+  .contact-inner h2{
+    font-size: clamp(30px, 4vw, 44px);
+    font-weight: 600;
+    letter-spacing: -0.015em;
     line-height: 1.1;
-    margin: 0 0 14px;
+    margin: 0 0 18px;
     text-wrap: balance;
   }
-  .contact-box p{
-    color: var(--ink-dim);
-    line-height: 1.6;
-    margin: 0;
-    max-width: 44ch;
-  }
-  .mail-block{ text-align: left; }
-  .mail-label{
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--ink-faint);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-    display:block;
+  .contact-inner p.sub{
+    font-size: 19px;
+    line-height: 1.5;
+    color: var(--text-secondary);
+    max-width: 480px;
+    margin: 0 auto 36px;
   }
   .mail-link{
-    font-family: var(--serif);
-    font-size: clamp(20px, 2.6vw, 26px);
-    color: var(--accent);
-    border-bottom: 1px solid var(--accent-deep);
-    padding-bottom: 4px;
+    font-size: clamp(22px, 2.6vw, 28px);
+    font-weight: 600;
+    color: var(--text);
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 6px;
     display:inline-block;
     word-break: break-word;
-    transition: color .15s ease, border-color .15s ease;
+    transition: color .2s ease, border-color .2s ease;
   }
-  .mail-link:hover{ color: var(--accent-soft); border-color: var(--accent-soft); }
+  .mail-link:hover{ color: var(--accent); border-color: var(--accent); }
   .location{
-    margin-top: 14px;
-    font-size: 12.5px;
-    color: var(--ink-faint);
+    margin-top: 18px;
+    font-size: 13px;
+    color: var(--text-secondary);
   }
 
   /* ---------- Footer ---------- */
   footer{
     border-top: 1px solid var(--line-soft);
-    padding-block: 22px;
-    font-family: var(--mono);
-    font-size: 11.5px;
+    padding-block: 24px;
+  }
+  .footer-inner{
+    max-width: 1024px;
+    margin: 0 auto;
+    padding-inline: clamp(16px, 4vw, 22px);
+  }
+  footer p{
+    font-size: 12px;
     line-height: 1.6;
-    color: var(--ink-faint);
-    letter-spacing: 0.03em;
+    color: var(--text-secondary);
+    margin: 0;
+    text-align: center;
   }
 </style>
 </head>
@@ -213,38 +217,36 @@
 <header class="nav">
   <div class="nav-inner">
     <div class="logo"><span class="logo-binny">Binny</span><span class="logo-tech">TechLabs</span></div>
-    <a class="btn-outline" href="#contact">Get in touch</a>
+    <a class="nav-cta" href="#contact">Get in touch</a>
   </div>
 </header>
 
-<div class="page">
-
-  <section class="hero">
-    <div>
-      <div class="eyebrow">Product company</div>
-      <h1>Small apps, built to be opened <em>every day.</em></h1>
-      <p class="lede">Binny TechLabs designs, builds, and ships its own apps in games, learning, and self-improvement. Each one is small enough to load instantly and sharp enough to stick. Think MilkeKhelo for play, Nimble Kids for learning.</p>
+<section class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Product company</div>
+    <h1>Small apps, built to be opened <span class="accent">every day.</span></h1>
+    <p class="lede">BinnyTechLabs designs, builds, and ships its own apps in games, learning, and self-improvement. Each one is small enough to load instantly and sharp enough to stick. Think MilkeKhelo for play, Nimble Kids for learning.</p>
+    <div class="btn-row">
+      <a class="btn-pill" href="#contact">Get in touch</a>
+      <a class="btn-text" href="mailto:talk@binnytechlabs.com">Write to us <span class="chev">&rsaquo;</span></a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="contact" id="contact">
-    <div class="contact-box">
-      <div>
-        <h2>Using one of our apps, or just want to say hello?</h2>
-        <p>We build every app ourselves, end to end. Got feedback, found a bug, or have a partnership idea? We read everything that lands in the inbox.</p>
-      </div>
-      <div class="mail-block">
-        <span class="mail-label">Write to us</span>
-        <a class="mail-link" href="mailto:talk@binnytechlabs.com">talk@binnytechlabs.com</a>
-        <div class="location">Gurugram, India</div>
-      </div>
-    </div>
-  </section>
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="contact-eyebrow">Get in touch</div>
+    <h2>Using one of our apps, or just want to say hello?</h2>
+    <p class="sub">We build every app ourselves, end to end. Got feedback, found a bug, or have a partnership idea? We read everything that lands in the inbox.</p>
+    <a class="mail-link" href="mailto:talk@binnytechlabs.com">talk@binnytechlabs.com</a>
+    <div class="location">New Delhi, India</div>
+  </div>
+</section>
 
-  <footer>
-    <span>&copy; 2026 Binny TechLabs LLP. Incorporated under Section 12(1) of the Limited Liability Partnership Act, 2008.</span>
-  </footer>
-
-</div>
+<footer>
+  <div class="footer-inner">
+    <p>&copy; 2026 BinnyTechLabs LLP. Incorporated under Section 12(1) of the Limited Liability Partnership Act, 2008.</p>
+  </div>
+</footer>
 </body>
 </html>
